@@ -1,0 +1,132 @@
+{
+    "ec2_instances": [
+      {
+        "instance_id": "i-1234567890",
+        "instance_type": "t3.medium",
+        "region": "us-east-1",
+        "cpu_usage": 65.3,
+        "memory_usage": 78.9,
+        "disk_io_mb": 500,
+        "running_hours": 200,
+        "cost_usd": 24.0
+      },
+      {
+        "instance_id": "i-0987654321",
+        "instance_type": "m5.large",
+        "region": "us-west-2",
+        "cpu_usage": 85.6,
+        "memory_usage": 60.2,
+        "disk_io_mb": 800,
+        "running_hours": 180,
+        "cost_usd": 48.75
+      }
+    ],
+    "s3_storage": [
+      {
+        "bucket_name": "product-images",
+        "region": "us-east-1",
+        "storage_size_gb": 150,
+        "object_count": 50000,
+        "data_in_gb": 10,
+        "data_out_gb": 20,
+        "storage_cost_usd": 4.5,
+        "transfer_cost_usd": 0.8
+      },
+      {
+        "bucket_name": "backups-db",
+        "region": "us-west-2",
+        "storage_size_gb": 500,
+        "object_count": 120000,
+        "data_in_gb": 50,
+        "data_out_gb": 30,
+        "storage_cost_usd": 15.0,
+        "transfer_cost_usd": 1.5
+      }
+    ],
+    "lambda_functions": [
+      {
+        "function_name": "process-orders",
+        "region": "us-east-1",
+        "invocation_count": 12000,
+        "avg_duration_ms": 150,
+        "errors_pct": 0.2,
+        "cost_usd": 0.8
+      },
+      {
+        "function_name": "send-notifications",
+        "region": "us-west-2",
+        "invocation_count": 5000,
+        "avg_duration_ms": 100,
+        "errors_pct": 1.5,
+        "cost_usd": 0.25
+      }
+    ],
+    "rds_databases": [
+      {
+        "db_instance_id": "db-001",
+        "db_engine": "MySQL",
+        "region": "us-east-1",
+        "cpu_usage_pct": 65.0,
+        "memory_usage_pct": 75.0,
+        "disk_read_iops": 1500,
+        "disk_write_iops": 1200,
+        "cost_usd": 85.0
+      },
+      {
+        "db_instance_id": "db-002",
+        "db_engine": "PostgreSQL",
+        "region": "us-west-2",
+        "cpu_usage_pct": 80.5,
+        "memory_usage_pct": 65.2,
+        "disk_read_iops": 1800,
+        "disk_write_iops": 1300,
+        "cost_usd": 110.5
+      }
+    ],
+    "auto_scaling": [
+      {
+        "auto_scaling_group": "asg-web-servers",
+        "region": "us-east-1",
+        "scale_in_events": 15,
+        "scale_out_events": 20,
+        "avg_instances_running": 8,
+        "cost_usd": 250.0
+      },
+      {
+        "auto_scaling_group": "asg-app-servers",
+        "region": "us-west-2",
+        "scale_in_events": 10,
+        "scale_out_events": 25,
+        "avg_instances_running": 6,
+        "cost_usd": 180.0
+      }
+    ],
+    "cloudwatch_alarms": [
+      {
+        "alarm_name": "high-cpu-ec2",
+        "metric_type": "CPU Utilization",
+        "region": "us-east-1",
+        "threshold_exceeded": "Yes",
+        "trigger_count": 10,
+        "alarm_action_taken": "Instance Scaling Triggered"
+      },
+      {
+        "alarm_name": "high-disk-iops",
+        "metric_type": "Disk I/O Performance",
+        "region": "eu-west-1",
+        "threshold_exceeded": "Yes",
+        "trigger_count": 5,
+        "alarm_action_taken": "Increase IOPS Provisioning"
+      }
+    ],
+    "cost_breakdown": {
+      "ec2_instances": 450.0,
+      "s3_storage": 38.5,
+      "rds_databases": 431.25,
+      "lambda_functions": 2.85,
+      "auto_scaling": 735.0,
+      "cloudwatch": 50.0,
+      "total": 1707.6
+    }
+  }
+  

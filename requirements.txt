@@ -1,0 +1,7 @@
+boto3
+ibm-watson
+requests
+pyyaml
+pandas
+flask
+flask_cors
