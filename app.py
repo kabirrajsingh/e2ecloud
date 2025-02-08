@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from scripts.fetch_aws_data import load_cloud_data
-from scripts.send_to_watsonx import create_prompts, send_prompt_to_watsonx
+from scripts.send_to_deepseek import create_prompts, send_prompt_to_watsonx
 from scripts.preprocess_data import preprocess_all
 from scripts.apply_recommendations import main as apply_recommendations_main
 
